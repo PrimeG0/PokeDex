@@ -4,6 +4,7 @@ body{
     background-color: rgb(209, 198, 220);
     margin: 0;
     padding: 0;
+    overflow-x: visible;
 }
 #head{
    
@@ -186,4 +187,5 @@ padding: 0;
     z-index: 3;
     pointer-events: all;
     cursor: pointer;
+
 }
