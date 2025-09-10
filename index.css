@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background-color: rgb(209, 198, 220);
+    margin: 0;
+    padding: 0;
+}
+#head{
+   
+   color: rgb(41, 33, 58);
+   text-shadow: 1px 2px 0px rgb(46, 27, 3) ;
+    text-align: center;
+    font-family:"Press Start 2P";
+    font-size: 80px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 5px;
+    padding: 0;
+    margin-bottom: 30px;
+    cursor: pointer;
+    
+}
+
+#head:hover{
+    color: rgb(50, 0, 44);
+}
+#pokelist{
+    margin-top: 10vh;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    flex-wrap: wrap;
+    width: 1390px;
+    background-color: rgb(144, 133, 163);
+    border-radius: 30px;
+    transition: all 0.5s ease-in-out;
+    
+    padding: 0;
+
+    
+    
+}
+#pokelist li{
+    text-align: center;
+    background-color: rgb(58, 56, 80);
+    list-style: none;
+    margin: 6px;
+    width: 200px;
+    height:200px;
+    color: aliceblue;
+    font-family:  "Press Start 2P";
+    font-size: 20px;
+    border-radius: 20px;
+    border: 10px solid rgb(38, 30, 55);
+    margin-top: 10px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+
+    
+}
+#pokelist li:hover{
+    background-color: rgb(55, 48, 60);
+    top: -8px;
+    
+     box-shadow: 0 0 30px rgba(38, 0, 55, 0.7);
+     
+}
+#pokelist li h1{
+    font-size: 70px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -20px;
+    
+}
+#pokelist li h5{
+    font-family: 'Courier New', Courier, monospace;
+font-size: 20px;
+margin: 0;
+}
+.nav ul{
+ display: flex;
+margin: 0;
+padding: 0;
+ text-align: center;
+ justify-self: center;
+}
+.nav ul li{
+    margin-left: 30px;
+    list-style-type: none;
+    font-family: roboto;
+    
+    color: rgb(251, 241, 255);
+    background-color: rgb(63, 50, 79);
+    height: 35px;
+    width: 200px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 3px solid rgb(34, 7, 55);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}  
+
+.nav ul li:hover{
+    background-color: rgb(41, 27, 55);
+}
+.newpokemon{
+    justify-self: center;
+    width: 600px;
+    height: 80%;
+    background-color: rgba(45, 39, 54, 0.803);
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 40px;
+    margin-bottom: 50px;
+}
+
+#new{
+    font-family: "press start 2p";
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+    text-shadow: 1px 2px 0px rgb(3, 3, 46) ;
+    margin-top: 5%;
+    
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+#form label{
+    font-family: monospace;
+    font-size: 30px;
+    color: white;
+}
+#form input{
+    width: 400px;
+    height: 30px;
+    background-color: rgba(208, 203, 211, 0.956);
+}
+#form button{
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 20px;
+    font-family: "press start 2p";
+    font-size: 20px;
+}
+#show {
+    position: absolute;
+    z-index: 2;
+    margin-top: 30px;
+    width: 300px;
+    background-color: rgb(48, 40, 63);
+    margin-left: 40px;
+    border: 5px solid rgb(40, 35, 51);
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+     align-items: center;
+    
+}
+#show h4{
+    margin: 0;
+    padding: 0;
+}
+#showbox{
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.616);
+    width: 400px;
+    height: 300px;
+    border-radius: 40px;
+    justify-self: center;
+    justify-items: center;
+    text-align: center;
+    
+    display: none;
+    pointer-events: none;
+}
+#showbox button{
+    background-color: rgba(42, 33, 56, 0.555);
+    font-family: "press start 2p";
+    color: white;
+    z-index: 3;
+    pointer-events: all;
+    cursor: pointer;
+}

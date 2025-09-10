@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<div id="head">
+  PokeDex
+</div>
+
+
+<body>
+  <div class="nav">
+    <ul>
+      <li id="allbutton">Show All</li>
+      <li id="firebutton">Filter Fire</li>
+      <li id="waterbutton">Filter Water</li>
+      <li id="electricbutton">Filter Electric</li>
+      <li id="poisonbutton">Filter Poison</li>
+      <li id="grassbutton">Filter Grass</li>
+    </ul>
+    <div id="showbox">
+      <button id="showbut">X</button>
+      <div id="show">
+      </div>
+
+    </div>
+  </div>
+  <div class="list">
+    <ul id="pokelist">
+
+
+    </ul>
+  </div>
+  <div class="newpokemon">
+    <h2 id="new">Add a new Pokemon</h2>
+    <form id="form">
+      <label for="pokeN">Pokemon Name:</label>
+      <input type="text" id="pokeN" name="pokeN" required>
+
+      <label for="logoN">Logo:</label>
+      <input type="text" id="logoN" name="logoN" required>
+
+      <label for="typeN">Type:</label>
+      <input type="text" id="typeN" name="typeN" required>
+
+      <label for="powerN">Power:</label>
+      <input type="number" id="powerN" name="powerN" required>
+
+      <label for="regN">Region:</label>
+      <input type="text" id="regN" name="regN" required>
+
+      <button id="sub" type="submit">Submit</button>
+    </form>
+  </div>
+
+
+</body>
+
+</html>
+<script>
+  let pokemon = [
+    { name: "Bulbasaur", type: "grass", power: 100, logo: "🧄", region: "Kanto" },
+    { name: "Pikachu", type: "electric", power: 500, logo: "🗲", region: "Kanto" },
+    { name: "Squirtle", type: "water", power: 100, logo: "💧", region: "Kanto" },
+    { name: "Gengar", type: "poison", power: 300, logo: "👻", region: "Kanto" },
+    { name: "Charizard", type: "fire", power: 400, logo: "🐲", region: "Kanto" },
+    { name: "Blastoise", type: "water", power: 300, logo: "💥", region: "Kanto" },
+    { name: "Eevee", type: "normal", power: 200, logo: "🦊", region: "Kanto" },
+    { name: "Snorlax", type: "normal", power: 450, logo: "😴", region: "Kanto" },
+    { name: "Jigglypuff", type: "fairy", power: 180, logo: "🎤", region: "Kanto" },
+    { name: "Onix", type: "rock", power: 350, logo: "🪨", region: "Kanto" },
+    { name: "Mewtwo", type: "psychic", power: 600, logo: "🧠", region: "Kanto" },
+    { name: "Dragonite", type: "dragon", power: 550, logo: "🐉", region: "Kanto" },
+    { name: "Machamp", type: "fighting", power: 400, logo: "💪", region: "Kanto" },
+    { name: "Alakazam", type: "psychic", power: 420, logo: "🔮", region: "Kanto" },
+    { name: "Lapras", type: "water", power: 480, logo: "🛶", region: "Kanto" },
+    { name: "Scyther", type: "flying", power: 320, logo: "🪓", region: "Kanto" },
+    { name: "Lucario", type: "fighting", power: 450, logo: "🐺", region: "Sinnoh" },
+    { name: "Gyarados", type: "water", power: 500, logo: "🐍", region: "Kanto" },
+
+
+
+  ]
+
+  let container = document.getElementById("pokelist");
+
+  pokemon.forEach(function (player) {
+    let card = document.createElement("li");
+
+    card.innerHTML = `<h1>${player.logo}</h1><h4>${player.name}</h4><h5>Power:${player.power}</h5><h5>Type:${player.type}</h5>`;
+
+
+    container.appendChild(card);
+    let show = document.getElementById("showbox")
+
+
+
+
+    card.addEventListener("click", function (e) {
+      let showbox = document.getElementById("show")
+      show.style.display = "block"
+      showbox.innerHTML = `<h1>${player.logo}</h1><h4>${player.name}</h4><h5>Power:${player.power}</h5><h5>Type:${player.type}</h5>`;
+
+    });
+    let showbut = document.getElementById("showbut")
+    showbut.addEventListener("click", function (e) {
+
+      show.style.display = "none"
+
+    });
+
+
+
+
+
+
+    card.addEventListener('mouseenter', () => {
+      if (player.type === "water") {
+        card.style.background = "rgb(71, 58, 222)"
+      }
+      if (player.type === "poison") {
+        card.style.background = "rgb(143, 81, 201)"
+
+      }
+      if (player.type === "fire") {
+        card.style.background = "rgb(196, 126, 39)"
+
+      }
+      if (player.type === "grass") {
+        card.style.background = "rgb(21, 209, 37)"
+
+      }
+      if (player.type === "electric") {
+        card.style.background = "rgb(222, 208, 13)"
+
+      }
+      if (player.type === "rock") {
+        card.style.background = "rgb(120, 100, 80)"
+      }
+      if (player.type === "psychic") {
+        card.style.background = "rgb(255, 20, 147)"
+      }
+      if (player.type === "dragon") {
+        card.style.background = "rgb(0, 128, 255)"
+      }
+      if (player.type === "fighting") {
+        card.style.background = "rgb(178, 34, 34)"
+      }
+      if (player.type === "flying") {
+        card.style.background = "rgb(135, 206, 250)"
+      }
+      if (player.type === "normal") {
+        card.style.background = "rgb(180, 180, 180)"
+      }
+      if (player.type === "fairy") {
+        card.style.background = "rgb(255, 182, 193)"
+      }
+
+      card.addEventListener('mouseleave', () => {
+        card.style.background = "rgb(58, 56, 80)"
+      });
+    });
+    const firebutton = document.getElementById('firebutton');
+    firebutton.addEventListener('click', function () {
+
+      card.style.display = "none";
+
+      if (player.type === "fire") {
+        card.style.display = "block";
+
+      }
+
+
+
+
+    });
+    const waterbutton = document.getElementById('waterbutton');
+    waterbutton.addEventListener('click', function () {
+
+      card.style.display = "none";
+
+      if (player.type === "water") {
+        card.style.display = "block";
+
+      }
+    });
+    const poisonbutton = document.getElementById('poisonbutton');
+    poisonbutton.addEventListener('click', function () {
+
+      card.style.display = "none";
+
+      if (player.type === "poison") {
+        card.style.display = "block";
+
+      }
+    });
+    const electricbutton = document.getElementById('electricbutton');
+    electricbutton.addEventListener('click', function () {
+
+      card.style.display = "none";
+
+      if (player.type === "electric") {
+        card.style.display = "block";
+
+      }
+    });
+    const grassbutton = document.getElementById('grassbutton');
+    grassbutton.addEventListener('click', function () {
+
+      card.style.display = "none";
+
+      if (player.type === "grass") {
+        card.style.display = "block";
+
+      }
+    });
+    const allbutton = document.getElementById('allbutton');
+    allbutton.addEventListener('click', function () {
+
+      card.style.display = "block";
+      return card;
+    }
+    );
+
+
+
+  });
+
+  document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let newPoke = {
+      name: document.getElementById("pokeN").value,
+      logo: document.getElementById("logoN").value,
+      type: document.getElementById("typeN").value.toLowerCase(),
+      power: Number(document.getElementById("powerN").value),
+      region: document.getElementById("regN").value
+    };
+
+    pokemon.push(newPoke); 
+  
+
+    document.getElementById("form").reset();
+  });
+
+// IDK Why adding is not working
+
+
+
+</script>
